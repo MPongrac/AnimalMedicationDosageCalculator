@@ -1,0 +1,52 @@
+const langs='{ \
+  "en_us" : { \
+    "title" : "Animal Medication Dosage Calculator", \
+    "lbl_dosage" : "Single Dosage", \
+    "tooltiptext_dosage" : "Locate the single dose amount and enter it here.", \
+    "lbl_amt_water" : "Water Mixture", \
+    "tooltiptext_amt_water_mixture" : "Using drinking wate to administer small amounts of medication makes the process easier.", \
+    "heading_animal_details" : "Animal Details", \
+    "functional_description" : "A few details must be provided to compute the proper dosage:", \
+    "lbl_stall" : "Stall", \
+    "lbl_num_animals" : "Animal Count", \
+    "tooltiptext_num_animals" : "The number of animals in the given stall.", \
+    "lbl_avg_weight" : "Avg. Weight", \
+    "tooltiptext_avg_weight" : "The average weight of all animals to be medicated in the given stall.", \
+    "lbl_medicine" : "Medication", \
+    "tooltiptext_medicine" : "This is the amount of medicine each animal in the given stall should receive, based upon the average weight and single dose entered.", \
+    "lbl_water_mixture" : "Water Mixture", \
+    "tooltiptext_water_mixture" : "Add the medication to the amount of water from above and this is the amount to put in the drinking water for the animals in the selected stall.  The animals need to empty their drinking water usually within 1-2 hours.", \
+    "lbl_total_animal_count" : "Total Count", \
+    "tooltiptext_total_animal_count" : "Sum of all stalls (animal count entries).", \
+    "lbl_total_medication" : "Total Medication", \
+    "tooltiptext_total_medication" : "Sum of all stalls (medication).  This is important if you are ordering it.", \
+    "lbl_total_weight" : "Total Weight", \
+    "tooltiptext_total_weight" : "Sum of all stalls (per stall: animal count multiplied by average weight entry).", \
+    "tooltiptext_calculate_results" : "Click to calculate all values based upon entered values." \
+  } , \
+  "de_de" : { \
+    "title" : "Tierische Medizin Dosierungsrechner", \
+    "lbl_dosage" : "Dosierung", \
+    "tooltiptext_dosage" : "Trage den Beipackzettel beschriebene Dosis ein.", \
+    "lbl_amt_water" : "Wassermischung", \
+    "tooltiptext_amt_water_mixture" : "Wassermenge, falls das Medikament vorher aufgel&ouml;st, bzw mit Wasser verd&uuml;nnt werden soll.", \
+    "heading_animal_details" : "Tiere Details", \
+    "functional_description" : "Um eine Dosierung zu berechnen sind ein paar Details dazu ben&ouml;tigt:", \
+    "lbl_stall" : "Stall", \
+    "lbl_num_animals" : "Anzahl Tiere", \
+    "tooltiptext_num_animals" : "Anzahl alle Tiere in den ausgew&auml;hlte Stall die das Medikament bekommen sollen.", \
+    "lbl_avg_weight" : "Gewichtsdurchschnitt", \
+    "tooltiptext_avg_weight" : "Gewichtsdurchschnitt aller Tiere in den ausgew&auml;lte Stall die das Medikament bekommen sollen.", \
+    "lbl_medicine" : "Medikament", \
+    "tooltiptext_medicine" : "Basierend auf den eingetragenen Gewichtsdurchschnitt und Anzahl Tiere pro Stall, ist die errechnete Gesamtmenge des Medikaments.", \
+    "lbl_water_mixture" : "Wassermischung", \
+    "tooltiptext_water_mixture" : "Medikamentiertes Wassergemisch, wird hier pro Stall mit den Gewichts und Tieranzahl errechnet. Bitte beachten! Manche Medikamente müssen/sollten in einem bestimmten Zeitfenster konsumiert werden.", \
+    "lbl_total_animal_count" : "Gesamtanzahl", \
+    "tooltiptext_total_animal_count" : "Anzahl Tiere gesamt.", \
+    "lbl_total_medication" : "Gesamtmedikament", \
+    "tooltiptext_total_medication" : "Ben&ouml;tigte Medikamentgesamtmenge.", \
+    "lbl_total_weight" : "Gesamtgewicht", \
+    "tooltiptext_total_weight" : "Summe Gewicht aller St&auml;lle (Pro Stall: Anzahl Tiere mal Gewichtsdurchschnitt).", \
+    "tooltiptext_calculate_results" : "Hier klicken um die Ergebnisse zu berechnen anhand der eingegebenen Werten." \
+  } \
+}';

@@ -1,0 +1,175 @@
+
+
+body {
+  background: #f0cca1;
+  color: brown;
+}
+
+.container {
+  width: 90%;
+}
+
+.btn_calc {
+  background: yellow;
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  text-align: center;
+  align-content: center;
+  vertical-align: middle;
+  background-image: url("../images/calc.png");
+}
+
+/* input.output {
+  text-align: center;
+  background: blue;
+  color: yellow;
+} */
+
+div.output {
+  font-size: 2.0rem;
+  font-weight: bold;
+  padding: 2px;
+  margin-bottom: 2px;
+  height: 2.8rem;
+  width: 100px;
+  text-align: center;
+  background-color: brown;
+  color: #fdcca1;
+}
+
+input.entry {
+  font-size: 2.0rem;
+  font-weight: bold;
+  border: black 2px;
+  width: 120px;
+  height: auto;
+  text-align: center;
+  color: black;
+  background: white;
+  margin: 2px;
+}
+
+select.entry {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 3px;
+  width: 50px;
+  border: black 2px;
+  text-align: start;
+  color: black;
+  background: white;
+  padding: 2px;
+}
+
+.lg_lbl {
+   font-size: 2.1rem;
+}
+
+.top_entry {
+  top: 1.5px;
+  height: 23px;
+}
+
+#sel_amt_med_unit {
+  margin-left: 5px;
+}
+
+#total_weight_unit {
+  font-weight: bold;
+}
+
+#functional_description {
+  font-size: 2.0rem;
+}
+
+.btn_lang {
+  width: 60px;
+  height: 40px;
+  border: 0;
+  text-align: center;
+  align-content: center;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: inherit;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+button.btn_lang:disabled {
+  background-color: red;
+}
+
+.btn_en_us {
+  background-image: url(../images/langs/en_us-64.png); /* 32px*/
+}
+
+.btn_de_de {
+  background-image: url(../images/langs/de_de-64.png); /* 32px*/
+}
+
+
+
+/* Tooltip container */
+.tooltip {
+  font-size: 2.0rem;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  align-content: center;
+  text-align: center;
+  opacity: 1;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  font-size: 1.7rem;
+  visibility: hidden;
+  width: 200px;
+  background-color: brown;
+  color: #fdcca1;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.table > tbody > tr > td {
+  font-size: 2.0rem;
+  border-top-color: inherit;
+}
+
+.table > thead > tr > th {
+  font-size: 2.0rem;
+  border-bottom-color: inherit;
+}
