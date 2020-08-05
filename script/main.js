@@ -22,6 +22,14 @@ function calcResults() {
   show_row_details();
 }
 
+function removeAnyDecimal(num) {
+  return num.replace(",", "").replace(".", "");
+}
+
+function changeCommaToDecimal(num) {
+  return num.replace(",", ".");
+}
+
 function get_entered_amounts() {
   lbl_amt_med_per_weight = document.getElementById('amt_med_per_kg').value;
   console.log("Test lbl_amt_med_per_weight: " + lbl_amt_med_per_weight);

@@ -40,7 +40,7 @@
               Trage den Beipackzettel beschriebene Dosis ein.
             </span>
           </label>
-          <input type="number" onfocus="this.select();" id="amt_med_per_kg" value="0.005" class="col-sm-3 entry top_entry" aria-label="medication dosage amount" aria-labelledby='lbl_dosage'>
+          <input type="number" onfocus="this.select();" id="amt_med_per_kg" value="0.005" onchange="this.value=changeCommaToDecimal(this.value);" class="col-sm-3 entry top_entry" aria-label="medication dosage amount" aria-labelledby='lbl_dosage'>
           <select id="sel_amt_med_unit" class="col-sm-1 entry" onchange="set_amt_med_unit()" aria-label="medication dosage amount unit" aria-labelledby='lbl_dosage' name="medication dosage amount unit">
           </select>
           <label id="lbl_sel_weight_unit" for="sel_weight_unit" class="col-sm-1 lg_lbl" aria-label="water mixture amount division symbol">/</label>
@@ -97,43 +97,43 @@
         <tbody>
           <tr>
             <td>1</td>
-            <td><input type="number" onfocus="this.select();" id="row_1_animal_count" value="0" class="entry" aria-label="animal count in stall 1 to receive medication" aria-labelledby='lbl_num_animals' alt="animal count in stall 1 to receive medication"></td>
-            <td><input type="number" onfocus="this.select();" id="row_1_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 1 to receive medication" aria-labelledby='lbl_avg_weight' alt="average animal weight in stall 1 to receive medication"></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_1_animal_count" value="0" class="entry" aria-label="animal count in stall 1 to receive medication" aria-labelledby='lbl_num_animals' alt="animal count in stall 1 to receive medication"></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_1_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 1 to receive medication" aria-labelledby='lbl_avg_weight' alt="average animal weight in stall 1 to receive medication"></td>
             <td><div id="row_1_ml_medicine" class="output" aria-label="medication amount for stall 1" alt="medication amount for stall 1" aria-labelledby='lbl_medicine'></div></td>
             <td><div id="row_1_ml_water_mixture" class="output" aria-label="water mixture amount for stall 1" alt="water mixture amount for stall 1" aria-labelledby='lbl_water_mixture'></div></td>
           </tr>
           <tr>
             <td>2</td>
-            <td><input type="number" onfocus="this.select();" id="row_2_animal_count" value="0" class="entry" aria-label="animal count in stall 2 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" id="row_2_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 2 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_2_animal_count" value="0" class="entry" aria-label="animal count in stall 2 to receive medication" aria-labelledby='lbl_num_animals'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_2_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 2 to receive medication" aria-labelledby='lbl_avg_weight'></td>
             <td><div id="row_2_ml_medicine" class="output" aria-label="medication amount for stall 2" aria-labelledby='lbl_medicine'></div></td>
             <td><div id="row_2_ml_water_mixture" class="output" aria-label="water mixture amount for stall 2" aria-labelledby='lbl_water_mixture'></div></td>
           </tr>
           <tr>
             <td>3</td>
-            <td><input type="number" onfocus="this.select();" id="row_3_animal_count" value="0" class="entry" aria-label="animal count in stall 3 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" id="row_3_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 3 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_3_animal_count" value="0" class="entry" aria-label="animal count in stall 3 to receive medication" aria-labelledby='lbl_num_animals'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_3_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 3 to receive medication" aria-labelledby='lbl_avg_weight'></td>
             <td><div id="row_3_ml_medicine" class="output" aria-label="medication amount for stall 3" aria-labelledby='lbl_medicine'></div></td>
             <td><div id="row_3_ml_water_mixture" class="output" aria-label="water mixture amount for stall 3" aria-labelledby='lbl_water_mixture'></div></td>
           </tr>
           <tr>
             <td>4</td>
-            <td><input type="number" onfocus="this.select();" id="row_4_animal_count" value="0" class="entry" aria-label="animal count in stall 4 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" id="row_4_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 4 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_4_animal_count" value="0" class="entry" aria-label="animal count in stall 4 to receive medication" aria-labelledby='lbl_num_animals'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_4_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 4 to receive medication" aria-labelledby='lbl_avg_weight'></td>
             <td><div id="row_4_ml_medicine" class="output" aria-label="medication amount for stall 4" aria-labelledby='lbl_medicine'></div></td>
             <td><div id="row_4_ml_water_mixture" class="output" aria-label="water mixture amount for stall 4" aria-labelledby='lbl_water_mixture'></div></td>
           </tr>
           <tr>
             <td>5</td>
-            <td><input type="number" onfocus="this.select();" id="row_5_animal_count" value="0" class="entry" aria-label="animal count in stall 5 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" id="row_5_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 5 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_5_animal_count" value="0" class="entry" aria-label="animal count in stall 5 to receive medication" aria-labelledby='lbl_num_animals'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_5_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 5 to receive medication" aria-labelledby='lbl_avg_weight'></td>
             <td><div id="row_5_ml_medicine" class="output" aria-label="medication amount for stall 5" aria-labelledby='lbl_medicine'></div></td>
             <td><div id="row_5_ml_water_mixture" class="output" aria-label="water mixture amount for stall 5" aria-labelledby='lbl_water_mixture'></div></td>
           </tr>
           <tr>
             <td>6</td>
-            <td><input type="number" onfocus="this.select();" id="row_6_animal_count" value="0" class="entry" aria-label="animal count in stall 6 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" id="row_6_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 6 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_6_animal_count" value="0" class="entry" aria-label="animal count in stall 6 to receive medication" aria-labelledby='lbl_num_animals'></td>
+            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_6_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 6 to receive medication" aria-labelledby='lbl_avg_weight'></td>
             <td><div id="row_6_ml_medicine" class="output" aria-label="medication amount for stall 6" aria-labelledby='lbl_medicine'></div></td>
             <td><div id="row_6_ml_water_mixture" class="output" aria-label="water mixture amount for stall 6" aria-labelledby='lbl_water_mixture'></div></td>
           </tr>
