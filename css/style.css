@@ -38,6 +38,15 @@ div.output {
   color: #fdcca1;
 }
 
+div.total_amt, span.tooltiptext .total_label {
+  background: black;
+  color: white;
+}
+
+div.total_label, span.total_label {
+  color: black;
+}
+
 input.entry {
   font-size: 2.0rem;
   font-weight: bold;
