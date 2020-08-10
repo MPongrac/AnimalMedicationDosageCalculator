@@ -9,6 +9,7 @@ var animal_avg_weight = [0,0,0,0,0,0];
 var dosage = [0,0,0,0,0,0];
 var mixture = [0,0,0,0,0,0];
 
+
 function calcResults() {
   console.log("#####################");
   console.log("#####################");

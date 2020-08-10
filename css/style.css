@@ -5,8 +5,81 @@ body {
   color: brown;
 }
 
+nav.navbar, .container-fluid, .navbar-header, .navbar-nav {
+  background-color: brown
+  color: #f0cca1;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-med-forms {
+  content: center;
+}
+
+.navbar-language-options {
+  position: fixed;
+  margin-right: 40px;
+}
+
+.navbar-right {
+  margin-right: 50px;
+}
+
 .container {
   width: 90%;
+}
+
+section.entry_area {
+  padding: 0;
+}
+
+button.btn_medicine_option {
+  margin-left: 15px;
+  margin-right: 15px;
+  color: black;
+  border-radius: 30px;
+}
+
+button.btn_medicine_option:disabled {
+  background-color: red;
+}
+
+.btn_lang {
+  width: 60px;
+  height: 40px;
+  border: 0;
+  text-align: center;
+  align-content: center;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: inherit;
+  margin-bottom: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+button.btn_lang:disabled {
+  background-color: red;
+}
+
+.btn_en_us {
+  background-image: url(../images/langs/en_us-64.png); /* 32px*/
+}
+
+.btn_de_de {
+  background-image: url(../images/langs/de_de-64.png); /* 32px*/
+}
+
+.top-inputs {
+  margin-top: 70px;
 }
 
 .btn_calc {
@@ -63,12 +136,12 @@ select.entry {
   font-size: 2.5rem;
   font-weight: bold;
   margin: 3px;
-  width: 50px;
+  width: 70px;
   border: black 2px;
   text-align: start;
   color: black;
   background: white;
-  padding: 2px;
+  padding-right: 10px;
 }
 
 .lg_lbl {
@@ -91,35 +164,6 @@ select.entry {
 #functional_description {
   font-size: 2.0rem;
 }
-
-.btn_lang {
-  width: 60px;
-  height: 40px;
-  border: 0;
-  text-align: center;
-  align-content: center;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: inherit;
-  margin-bottom: 15px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-button.btn_lang:disabled {
-  background-color: red;
-}
-
-.btn_en_us {
-  background-image: url(../images/langs/en_us-64.png); /* 32px*/
-}
-
-.btn_de_de {
-  background-image: url(../images/langs/de_de-64.png); /* 32px*/
-}
-
-
 
 /* Tooltip container */
 .tooltip {
@@ -146,7 +190,7 @@ button.btn_lang:disabled {
   /* Position the tooltip text */
   position: absolute;
   z-index: 1;
-  bottom: 125%;
+  bottom: 100%;
   left: 50%;
   margin-left: -100px;
 
@@ -159,7 +203,7 @@ button.btn_lang:disabled {
 .tooltip .tooltiptext::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 100%; /* At the bottom of the tooltip */
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
@@ -167,8 +211,43 @@ button.btn_lang:disabled {
   border-color: #555 transparent transparent transparent;
 }
 
+/* Tooltip text */
+.tooltip .tooltiptext_bottom {
+  font-size: 1.7rem;
+  visibility: hidden;
+  width: 200px;
+  background-color: brown;
+  color: #fdcca1;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -100px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext_bottom::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #555 transparent;
+}
+
 /* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext_bottom {
   visibility: visible;
   opacity: 1;
 }
