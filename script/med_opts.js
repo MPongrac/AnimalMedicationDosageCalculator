@@ -7,6 +7,8 @@ var btn_pill = document.getElementById('btn_pill');
 
 var med_strength_info = document.getElementById('med_strength_info');
 var lbl_pills = document.getElementById('lbl_pills');
+var lbl_pill_unit = document.getElementById('lbl_pill_unit');
+var sel_med_strength_fluid_unit = document.getElementById('sel_med_strength_fluid_unit');
 var value_pills = document.getElementById('value_pills');
 var strength_exist = false;
 var pills_exist = false;
@@ -48,26 +50,31 @@ function setTopControlVisibilityBasedUponMedicineFormOption() {
 }
 
 function showFluidControls() {
-  console.log("show fluid");
   hidePillControls();
   med_strength_info.hidden = false;
+  sel_med_strength_fluid_unit.hidden = false;
+  
   btn_fluid.disabled = true;
   btn_powder.disabled = false;
 }
 
 function showPillControls() {
-  console.log("show pills");
   lbl_pills.hidden = false;
   value_pills.hidden = false;
   med_strength_info.hidden = false;
+  lbl_pill_unit.hidden = false;
+  sel_med_strength_fluid_unit.hidden = true;
+
   btn_pill.disabled = true;
 }
 
 function hidePillControls() {
-  console.log("hide pills");
   lbl_pills.hidden = true;
   value_pills.hidden = true;
   med_strength_info.hidden = true;
+  lbl_pill_unit.hidden = true;
+  sel_med_strength_fluid_unit.hidden = true;
+
   btn_powder.disabled = true;
 }
 
@@ -109,13 +116,25 @@ function ensureMedicationOptionElementsExist() {
 function ensureMedicationStrengthExist() {
   if (strength_exist == true) { return; }
 
-  // Selections
   if (med_strength_info == null) {
     med_strength_info = document.getElementById('med_strength_info');
     if (med_strength_info == null) {
       return;
     }
   }
+  if (sel_med_strength_fluid_unit == null) {
+    sel_med_strength_fluid_unit = document.getElementById('sel_med_strength_fluid_unit');
+    if (sel_med_strength_fluid_unit == null) {
+      return;
+    }
+  }
+  if (lbl_pill_unit == null) {
+    lbl_pill_unit = document.getElementById('lbl_pill_unit');
+    if (lbl_pill_unit == null) {
+      return;
+    }
+  }
+
   strength_exist = true
 }
 function ensurePillsExist() {

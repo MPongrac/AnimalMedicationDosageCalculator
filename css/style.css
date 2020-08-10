@@ -38,6 +38,7 @@ nav.navbar, .container-fluid, .navbar-header, .navbar-nav {
 
 section.entry_area {
   padding: 0;
+  vertical-align: middle;
 }
 
 button.btn_medicine_option {
@@ -135,8 +136,9 @@ input.entry {
 select.entry {
   font-size: 2.5rem;
   font-weight: bold;
-  margin: 3px;
+  margin: 0;
   width: 70px;
+  height: 30.5667px;
   border: black 2px;
   text-align: start;
   color: black;
@@ -151,6 +153,14 @@ select.entry {
 .top_entry {
   top: 1.5px;
   height: 23px;
+}
+
+#amt_water {
+  width: 60px;
+}
+
+#amt_med_per_weight, #amt_med_strength {
+  width: 80px;
 }
 
 #sel_amt_med_unit {

@@ -84,7 +84,7 @@
 
       <div class="container top-inputs" aria-label="Defaulted input elements.">
 
-        <section class="entry_area col-sm-5" id="med_strength_info"
+        <section class="entry_area col-sm-4" id="med_strength_info"
         name="med_strength_info" aria-label="Medication strength information."
         hidden="true">
           <label id="lbl_strength" for="amt_med_strength" class="lg_lbl tooltip"
@@ -93,7 +93,8 @@
               Trage den Beipackzettel beschriebene St&auml;rke ein.
             </span>
           </label>
-          <input type="number" onfocus="this.select();" id="amt_med_strength" value="0.005"
+
+          <input type="number" onfocus="this.select();" id="amt_med_strength" value="0.025"
           onchange="this.value=changeCommaToDecimal(this.value);" class="entry top_entry"
           aria-label="medication strength amount" aria-labelledby='lbl_strength'>
           <select id="sel_amt_med_strength_unit" class="entry" onchange="set_med_strength_unit()"
@@ -102,23 +103,26 @@
 
           <span class="lg_lbl" aria-label="medication strength per unit, division sign">/</span>
           <span id="lbl_pill_unit" class="lg_lbl" aria-label="pill unit" hidden>Pille</span>
-          <select id="sel_med_strength_fluid_unit" class="entry" onchange="set_med_strength_fluid_unit()"
+          <span class="lg_lbl" id="sel_med_strength_fluid_unit">ml</span>
+          <!-- <select id="sel_med_strength_fluid_unit" class="entry" onchange="set_med_strength_fluid_unit()"
           aria-label="medication strength fluid unit" aria-labelledby='lbl_strength'
           name="medication strength fluid unit">
-          </select>
+          </select> -->
         </section>
 
         <section class="entry_area col-sm-4" aria-label="Medication dosage information.">
-          <label id="lbl_dosage" for="amt_med_per_kg" class="lg_lbl tooltip"
+          <label id="lbl_dosage" for="amt_med_per_weight" class="lg_lbl tooltip"
           aria-label="Dosage Details label">Dosierung
             <span id="tooltiptext_dosage" class="tooltiptext_bottom">
               Trage den Beipackzettel beschriebene Dosis ein.
             </span>
           </label>
-          <input type="number" onfocus="this.select();" id="amt_med_per_kg" value="0.005"
+
+          <input type="number" onfocus="this.select();" id="amt_med_per_weight" value="0.005"
           onchange="this.value=changeCommaToDecimal(this.value);" class="entry top_entry"
           aria-label="medication dosage amount" aria-labelledby='lbl_dosage'
           name="medication dosage amount">
+
           <select id="sel_amt_med_unit" class="entry" onchange="set_amt_med_unit()"
           aria-label="medication dosage amount unit" aria-labelledby='lbl_dosage'
           name="medication dosage amount unit">
@@ -131,22 +135,24 @@
           </select>
         </section>
 
-        <section class="entry_area col-sm-3" aria-label="Water mixture information.">
+        <section class="entry_area col-sm-4" aria-label="Water mixture information.">
           <label id="lbl_amt_water" for="amt_water" class="lg_lbl tooltip"
           aria-label="Label for water mixture.">Wassermischung
             <span id="tooltiptext_amt_water_mixture" class="tooltiptext_bottom">
               Wassermenge, falls das Medikament vorher aufgel&ouml;st, bzw mit Wasser verd&uuml;nnt werden soll
             </span>
           </label>
+
           <input type="number" onfocus="this.select();" id="amt_water" value="100"
           onchange="this.value=removeAnyDecimal(this.value);"
           class="entry top_entry" aria-label="water mixture amount"
           aria-labelledby='lbl_amt_water' name="water mixture amount">
 
-          <select id="sel_amt_water_unit" class="entry" onchange="set_water_unit()"
+          <span class="lg_lbl">ml</span>
+          <!-- <select id="sel_amt_water_unit" class="entry" onchange="set_water_unit()"
           aria-label="water mixture amount unit" aria-labelledby='lbl_amt_water'
           name="water mixture amount unit">
-          </select>
+          </select> -->
         </section>
 
       </div>
