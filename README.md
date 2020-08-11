@@ -11,6 +11,14 @@ Please enjoy the calculator and tell your friends about it if you find it useful
 
 If anyone wishes to add other languages, feel free to contact me via github.
 
+
+# Future Plans
+
+* Improve the mobile user experience.
+* Add more languages.
+* Add other medication forms. (Done.)
+* Open for further suggestions.
+
 # Change Log
 
 * 2020-08-11
