@@ -4,6 +4,7 @@ var val_total_water_mixture = 100;
 var val_animal_count = 0;
 var val_total_weight = 0;
 var val_total_medicine = 0;
+var dosageToPillPercentage = 0;
 
 var animal_count = [];
 var animal_avg_weight = [0,0,0,0,0,0];
@@ -11,10 +12,10 @@ var dosage = [0,0,0,0,0,0];
 var mixture = [0,0,0,0,0,0];
 
 var total_num_pills = 0;
-var processing_pills = false;
-var processing_fluid = false;
-var medicine_form_option = "powder";
-var medicine_form_options = ["powder", "fluid", "pill"];
+// var processing_pills = false;
+// var processing_fluid = false;
+// var medicine_form_option = "powder";
+// var medicine_form_options = ["powder", "fluid", "pill"];
 
 function calcResults() {
   console.log("#####################");
@@ -97,10 +98,24 @@ function compute_totals() {
     }
   }
   val_total_medicine = 1 * val_total_weight * val_amt_med_per_weight;
+  computeNumberPillsMedicationAmount();
   console.log("Test compute_totals val_animal_count: " + val_animal_count);
   console.log("Test compute_totals val_total_weight: " + val_total_weight);
   console.log("Test compute_totals val_total_medicine: " + val_total_medicine);
-  console.log("Test compute_totals val_total_pills: " + total_num_pills);
+  console.log("Test compute_totals val_total_pills/medication amount: " + total_num_pills);
+}
+
+
+// function computeDosageToPillPercentage() {
+//   dosageToPillPercentage = 0;
+//   dosageToPillPercentage = val_amt_med_per_weight / val_amt_med_strength;
+//   console.log("Test computeDosageToPillPercentage: " + dosageToPillPercentage);
+// }
+
+function computeNumberPillsMedicationAmount() {
+  // computeDosageToPillPercentage();
+  total_num_pills = 0;
+  total_num_pills = val_total_medicine / val_amt_med_strength;
 }
 
 function compute_row_details() {
@@ -119,7 +134,8 @@ function show_totals() {
   $('#result_animal_count').html(val_animal_count);
   $('#result_animal_weight').html(val_total_weight.toFixed(2));
   $('#result_total_medication').html(val_total_medicine.toFixed(2));
-  show_pill_details();
+  $('#result_pill_count').html(total_num_pills.toFixed(2));
+  $('#result_medication_amount').html(total_num_pills.toFixed(2));
 }
 
 function show_row_details() {
@@ -153,8 +169,4 @@ function show_row_5_details() {
 function show_row_6_details() {
   $('#row_6_ml_medicine').html(dosage[5].toFixed(2));
   $('#row_6_ml_water_mixture').html(mixture[5].toFixed(2));
-}
-
-function show_pill_details() {
-  $('#result_pill_count').html(total_num_pills);
 }

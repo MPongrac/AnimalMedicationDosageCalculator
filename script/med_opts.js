@@ -8,10 +8,17 @@ var btn_pill = document.getElementById('btn_pill');
 var med_strength_info = document.getElementById('med_strength_info');
 var lbl_pills = document.getElementById('lbl_pills');
 var lbl_pill_unit = document.getElementById('lbl_pill_unit');
-var sel_med_strength_fluid_unit = document.getElementById('sel_med_strength_fluid_unit');
+var lbl_powder_total_medication = document.getElementById('lbl_powder_total_medication');
+var total_dosage = document.getElementById('total_dosage');
+// var sel_med_strength_fluid_unit = document.getElementById('sel_med_strength_fluid_unit');
 var value_pills = document.getElementById('value_pills');
+var lbl_med_strength_fluid_unit = document.getElementById('lbl_med_strength_fluid_unit');
+var value_medication_total = document.getElementById('value_medication_total');
+var lbl_medication_total = document.getElementById('lbl_medication_total');
+
 var strength_exist = false;
 var pills_exist = false;
+var fluids_exist = false;
 
 
 function setMedicineFormOptionPowder() {
@@ -52,8 +59,13 @@ function setTopControlVisibilityBasedUponMedicineFormOption() {
 function showFluidControls() {
   hidePillControls();
   med_strength_info.hidden = false;
-  sel_med_strength_fluid_unit.hidden = false;
-  
+  // sel_med_strength_fluid_unit.hidden = false;
+  lbl_med_strength_fluid_unit.hidden = false;
+  value_medication_total.hidden = false;
+  lbl_medication_total.hidden = false;
+  lbl_powder_total_medication.hidden = true;
+  total_dosage.hidden = false;
+
   btn_fluid.disabled = true;
   btn_powder.disabled = false;
 }
@@ -63,7 +75,12 @@ function showPillControls() {
   value_pills.hidden = false;
   med_strength_info.hidden = false;
   lbl_pill_unit.hidden = false;
-  sel_med_strength_fluid_unit.hidden = true;
+  // sel_med_strength_fluid_unit.hidden = true;
+  lbl_med_strength_fluid_unit.hidden = true;
+  value_medication_total.hidden = true;
+  lbl_medication_total.hidden = true;
+  lbl_powder_total_medication.hidden = true;
+  total_dosage.hidden = false;
 
   btn_pill.disabled = true;
 }
@@ -73,7 +90,12 @@ function hidePillControls() {
   value_pills.hidden = true;
   med_strength_info.hidden = true;
   lbl_pill_unit.hidden = true;
-  sel_med_strength_fluid_unit.hidden = true;
+  // sel_med_strength_fluid_unit.hidden = true;
+  lbl_med_strength_fluid_unit.hidden = true;
+  value_medication_total.hidden = true;
+  lbl_medication_total.hidden = true;
+  lbl_powder_total_medication.hidden = false;
+  total_dosage.hidden = true;
 
   btn_powder.disabled = true;
 }
@@ -112,6 +134,7 @@ function ensureBtnsExist() {
 function ensureMedicationOptionElementsExist() {
   ensureMedicationStrengthExist();
   ensurePillsExist();
+  ensureFluidsExist();
 }
 function ensureMedicationStrengthExist() {
   if (strength_exist == true) { return; }
@@ -122,15 +145,21 @@ function ensureMedicationStrengthExist() {
       return;
     }
   }
-  if (sel_med_strength_fluid_unit == null) {
-    sel_med_strength_fluid_unit = document.getElementById('sel_med_strength_fluid_unit');
-    if (sel_med_strength_fluid_unit == null) {
-      return;
-    }
-  }
+  // if (sel_med_strength_fluid_unit == null) {
+  //   sel_med_strength_fluid_unit = document.getElementById('sel_med_strength_fluid_unit');
+  //   if (sel_med_strength_fluid_unit == null) {
+  //     return;
+  //   }
+  // }
   if (lbl_pill_unit == null) {
     lbl_pill_unit = document.getElementById('lbl_pill_unit');
     if (lbl_pill_unit == null) {
+      return;
+    }
+  }
+  if (lbl_med_strength_fluid_unit == null) {
+    lbl_med_strength_fluid_unit = document.getElementById('lbl_med_strength_fluid_unit');
+    if (lbl_med_strength_fluid_unit == null) {
       return;
     }
   }
@@ -140,6 +169,18 @@ function ensureMedicationStrengthExist() {
 function ensurePillsExist() {
   if (pills_exist == true) { return; }
 
+  if (lbl_powder_total_medication == null) {
+    lbl_powder_total_medication = document.getElementById('lbl_powder_total_medication');
+    if (lbl_powder_total_medication == null) {
+      return;
+    }
+  }
+  if (total_dosage == null) {
+    total_dosage = document.getElementById('total_dosage');
+    if (total_dosage == null) {
+      return;
+    }
+  }
   if (lbl_pills == null) {
     lbl_pills = document.getElementById('lbl_pills');
     if (lbl_pills == null) {
@@ -153,4 +194,21 @@ function ensurePillsExist() {
     }
   }
   pills_exist = true
+}
+function ensureFluidsExist() {
+  if (fluids_exist == true) { return; }
+
+  if (value_medication_total == null) {
+    value_medication_total = document.getElementById('value_medication_total');
+    if (value_medication_total == null) {
+      return;
+    }
+  }
+  if (lbl_medication_total == null) {
+    lbl_medication_total = document.getElementById('lbl_medication_total');
+    if (lbl_medication_total == null) {
+      return;
+    }
+  }
+  fluids_exist = true
 }

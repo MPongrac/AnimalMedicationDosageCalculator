@@ -42,7 +42,9 @@
             class="navbar-btn btn_medicine_option btn_powder tooltip"
             onclick="setMedicineFormOptionPowder()" disabled="true">
               <span id="btn_lbl_powder">Pulver</span>
-              <span id="tooltiptext_powder" class="tooltiptext_bottom btn_powder_tooltip_text">Pulver</span>
+              <span id="tooltiptext_powder" class="tooltiptext_bottom btn_powder_tooltip_text">
+                Pures Medikament in Pulverform
+              </span>
             </button>
           </li>
           <li class="active">
@@ -51,7 +53,9 @@
             class="navbar-btn btn_medicine_option btn_fluid tooltip"
             onclick="setMedicineFormOptionFluid()">
               <span id="btn_lbl_fluid">Fl&uuml;ssig</span>
-              <span id="tooltiptext_fluid" class="tooltiptext_bottom btn_fluid_tooltip_text">Fl&uuml;ssig</span>
+              <span id="tooltiptext_fluid" class="tooltiptext_bottom btn_fluid_tooltip_text">
+                Medikamente in fl&uuml;ssiger Form
+              </span>
             </button>
           </li>
           <li>
@@ -60,7 +64,9 @@
             class="navbar-btn btn_medicine_option btn_pill tooltip"
             onclick="setMedicineFormOptionPill()">
               <span id="btn_lbl_pill">Pille</span>
-              <span id="tooltiptext_pill" class="tooltiptext_bottom btn_pill_tooltip_text">Pille</span>
+              <span id="tooltiptext_pill" class="tooltiptext_bottom btn_pill_tooltip_text">
+                Medikamente in Pillenform
+              </span>
             </button>
           </li>
         </ul>
@@ -88,9 +94,9 @@
         name="med_strength_info" aria-label="Medication strength information."
         hidden="true">
           <label id="lbl_strength" for="amt_med_strength" class="lg_lbl tooltip"
-          aria-label="Medication strength label">Medikament St&auml;rke
+          aria-label="Medication strength label">Medikamentenst&auml;rke
             <span id="tooltiptext_strength" class="tooltiptext_bottom">
-              Trage den Beipackzettel beschriebene St&auml;rke ein.
+              Trage die im Beipackzettel beschriebene St&auml;rke ein.
             </span>
           </label>
 
@@ -103,7 +109,7 @@
 
           <span class="lg_lbl" aria-label="medication strength per unit, division sign">/</span>
           <span id="lbl_pill_unit" class="lg_lbl" aria-label="pill unit" hidden>Pille</span>
-          <span class="lg_lbl" id="sel_med_strength_fluid_unit">ml</span>
+          <span class="lg_lbl" id="lbl_med_strength_fluid_unit">ml</span>
           <!-- <select id="sel_med_strength_fluid_unit" class="entry" onchange="set_med_strength_fluid_unit()"
           aria-label="medication strength fluid unit" aria-labelledby='lbl_strength'
           name="medication strength fluid unit">
@@ -191,110 +197,127 @@
             </div>
             </th>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_1_animal_count" value="0" class="entry" aria-label="animal count in stall 1 to receive medication" aria-labelledby='lbl_num_animals' alt="animal count in stall 1 to receive medication"></td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_1_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 1 to receive medication" aria-labelledby='lbl_avg_weight' alt="average animal weight in stall 1 to receive medication"></td>
-            <td><div id="row_1_ml_medicine" class="output" aria-label="medication amount for stall 1" alt="medication amount for stall 1" aria-labelledby='lbl_medicine'></div></td>
-            <td><div id="row_1_ml_water_mixture" class="output" aria-label="water mixture amount for stall 1" alt="water mixture amount for stall 1" aria-labelledby='lbl_water_mixture'></div></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_2_animal_count" value="0" class="entry" aria-label="animal count in stall 2 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_2_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 2 to receive medication" aria-labelledby='lbl_avg_weight'></td>
-            <td><div id="row_2_ml_medicine" class="output" aria-label="medication amount for stall 2" aria-labelledby='lbl_medicine'></div></td>
-            <td><div id="row_2_ml_water_mixture" class="output" aria-label="water mixture amount for stall 2" aria-labelledby='lbl_water_mixture'></div></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_3_animal_count" value="0" class="entry" aria-label="animal count in stall 3 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_3_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 3 to receive medication" aria-labelledby='lbl_avg_weight'></td>
-            <td><div id="row_3_ml_medicine" class="output" aria-label="medication amount for stall 3" aria-labelledby='lbl_medicine'></div></td>
-            <td><div id="row_3_ml_water_mixture" class="output" aria-label="water mixture amount for stall 3" aria-labelledby='lbl_water_mixture'></div></td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_4_animal_count" value="0" class="entry" aria-label="animal count in stall 4 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_4_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 4 to receive medication" aria-labelledby='lbl_avg_weight'></td>
-            <td><div id="row_4_ml_medicine" class="output" aria-label="medication amount for stall 4" aria-labelledby='lbl_medicine'></div></td>
-            <td><div id="row_4_ml_water_mixture" class="output" aria-label="water mixture amount for stall 4" aria-labelledby='lbl_water_mixture'></div></td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_5_animal_count" value="0" class="entry" aria-label="animal count in stall 5 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_5_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 5 to receive medication" aria-labelledby='lbl_avg_weight'></td>
-            <td><div id="row_5_ml_medicine" class="output" aria-label="medication amount for stall 5" aria-labelledby='lbl_medicine'></div></td>
-            <td><div id="row_5_ml_water_mixture" class="output" aria-label="water mixture amount for stall 5" aria-labelledby='lbl_water_mixture'></div></td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_6_animal_count" value="0" class="entry" aria-label="animal count in stall 6 to receive medication" aria-labelledby='lbl_num_animals'></td>
-            <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_6_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 6 to receive medication" aria-labelledby='lbl_avg_weight'></td>
-            <td><div id="row_6_ml_medicine" class="output" aria-label="medication amount for stall 6" aria-labelledby='lbl_medicine'></div></td>
-            <td><div id="row_6_ml_water_mixture" class="output" aria-label="water mixture amount for stall 6" aria-labelledby='lbl_water_mixture'></div></td>
-          </tr>
-          <tr>
-            <td>
-              <div id="lbl_total_animal_count" class="tooltip total_label" aria-label="Total animal count">Gesamtanzahl
-                <span id="tooltiptext_total_animal_count" class="tooltiptext total_label" aria-label="Tooltip text to explain that the value is the animal count sum of all stalls.">
-                  Anzahl Tiere gesamt.
-                </span>
-              </div>
-            </td>
-            <td><div id="result_animal_count" class="output total_amt" aria-label="total animal count">
-            </div></td>
-            <td>
-              <div id="lbl_total_medication" class="tooltip total_label" alt="Total medication amount">Gesamtmedikament
-                <span id="tooltiptext_total_medication" class="tooltiptext total_label" alt="Tooltip text to explain that this is the sum of all stalls.">
-                  Ben&ouml;tigte Medikamentgesamtmenge.
-                </span>
-              </div>
-            </td>
-            <td>
-              <div id="result_total_medication" class="output col-sm-10 total_amt" alt="total medication amount result"></div>
-              <span id="total_medication_unit" class="col-sm-2 total_label" alt="Total medication unit of measure.">g</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="tooltip total_label" id="lbl_total_weight">Gesamtgewicht
-                <span id="tooltiptext_total_weight" class="tooltiptext total_label" alt="Tooltip text to explain that this is the sum of all stalls and that the amount per stall is calulated by the number of animals multiplied by the average weight.">
-                  Summe Gewicht aller St&auml;lle (Pro Stall: Anzahl Tiere mal Gewichtsdurchschnitt).
-                </span>
-              </div>
-            </td>
-            <td>
-              <div id="result_animal_weight" class="output col-sm-10 total_amt" alt="Total animal weight value."></div>
-              <span id="total_weight_unit" class="col-sm-2 total_label" alt="Total animal weight unit of measure.">kg</span>
-            </td>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_1_animal_count" value="0" class="entry" aria-label="animal count in stall 1 to receive medication" aria-labelledby='lbl_num_animals' alt="animal count in stall 1 to receive medication"></td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_1_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 1 to receive medication" aria-labelledby='lbl_avg_weight' alt="average animal weight in stall 1 to receive medication"></td>
+              <td><div id="row_1_ml_medicine" class="output" aria-label="medication amount for stall 1" alt="medication amount for stall 1" aria-labelledby='lbl_medicine'></div></td>
+              <td><div id="row_1_ml_water_mixture" class="output" aria-label="water mixture amount for stall 1" alt="water mixture amount for stall 1" aria-labelledby='lbl_water_mixture'></div></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_2_animal_count" value="0" class="entry" aria-label="animal count in stall 2 to receive medication" aria-labelledby='lbl_num_animals'></td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_2_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 2 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+              <td><div id="row_2_ml_medicine" class="output" aria-label="medication amount for stall 2" aria-labelledby='lbl_medicine'></div></td>
+              <td><div id="row_2_ml_water_mixture" class="output" aria-label="water mixture amount for stall 2" aria-labelledby='lbl_water_mixture'></div></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_3_animal_count" value="0" class="entry" aria-label="animal count in stall 3 to receive medication" aria-labelledby='lbl_num_animals'></td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_3_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 3 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+              <td><div id="row_3_ml_medicine" class="output" aria-label="medication amount for stall 3" aria-labelledby='lbl_medicine'></div></td>
+              <td><div id="row_3_ml_water_mixture" class="output" aria-label="water mixture amount for stall 3" aria-labelledby='lbl_water_mixture'></div></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_4_animal_count" value="0" class="entry" aria-label="animal count in stall 4 to receive medication" aria-labelledby='lbl_num_animals'></td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_4_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 4 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+              <td><div id="row_4_ml_medicine" class="output" aria-label="medication amount for stall 4" aria-labelledby='lbl_medicine'></div></td>
+              <td><div id="row_4_ml_water_mixture" class="output" aria-label="water mixture amount for stall 4" aria-labelledby='lbl_water_mixture'></div></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_5_animal_count" value="0" class="entry" aria-label="animal count in stall 5 to receive medication" aria-labelledby='lbl_num_animals'></td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_5_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 5 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+              <td><div id="row_5_ml_medicine" class="output" aria-label="medication amount for stall 5" aria-labelledby='lbl_medicine'></div></td>
+              <td><div id="row_5_ml_water_mixture" class="output" aria-label="water mixture amount for stall 5" aria-labelledby='lbl_water_mixture'></div></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=removeAnyDecimal(this.value);" id="row_6_animal_count" value="0" class="entry" aria-label="animal count in stall 6 to receive medication" aria-labelledby='lbl_num_animals'></td>
+              <td><input type="number" onfocus="this.select();" onchange="this.value=changeCommaToDecimal(this.value);" id="row_6_animal_avg_weight" value="0.0" class="entry" aria-label="average animal weight in stall 6 to receive medication" aria-labelledby='lbl_avg_weight'></td>
+              <td><div id="row_6_ml_medicine" class="output" aria-label="medication amount for stall 6" aria-labelledby='lbl_medicine'></div></td>
+              <td><div id="row_6_ml_water_mixture" class="output" aria-label="water mixture amount for stall 6" aria-labelledby='lbl_water_mixture'></div></td>
+            </tr>
+            <tr>
+              <td>
+                <div id="lbl_total_animal_count" class="tooltip total_label" aria-label="Total animal count">Gesamtanzahl
+                  <span id="tooltiptext_total_animal_count" class="tooltiptext total_label" aria-label="Tooltip text to explain that the value is the animal count sum of all stalls.">
+                    Anzahl Tiere gesamt.
+                  </span>
+                </div>
+              </td>
+              <td><div id="result_animal_count" class="output total_amt" aria-label="total animal count">
+              </div></td>
+              <td id="lbl_powder_total_medication">
+                <div id="lbl_total_medication" class="tooltip total_label" alt="Total medication amount">Gesamtmedikament
+                  <span id="tooltiptext_total_medication" class="tooltiptext total_label" alt="Tooltip text to explain that this is the sum of all stalls.">
+                    Ben&ouml;tigte Medikamentgesamtmenge.
+                  </span>
+                </div>
+              </td>
+              <td hidden="true" id="total_dosage">
+                <div id="lbl_total_medication_dosage" class="tooltip total_label" alt="Total medication dosage">Gesamtdosis
+                  <span id="tooltiptext_total_medication_dosage" class="tooltiptext total_label" alt="Tooltip text to explain that this is the dosage sum of all stalls.">
+                    Gesamtmenge der ben&ouml;tigten Medikamentendosis.
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div id="result_total_medication" class="output col-sm-10 total_amt" alt="total medication amount result"></div>
+                <span id="total_medication_unit" class="col-sm-2 total_label" alt="Total medication unit of measure.">g</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="tooltip total_label" id="lbl_total_weight">Gesamtgewicht
+                  <span id="tooltiptext_total_weight" class="tooltiptext total_label" alt="Tooltip text to explain that this is the sum of all stalls and that the amount per stall is calulated by the number of animals multiplied by the average weight.">
+                    Summe Gewicht aller St&auml;lle (Pro Stall: Anzahl Tiere mal Gewichtsdurchschnitt).
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div id="result_animal_weight" class="output col-sm-10 total_amt" alt="Total animal weight value."></div>
+                <span id="total_weight_unit" class="col-sm-2 total_label" alt="Total animal weight unit of measure.">kg</span>
+              </td>
 
-            <td id="lbl_pills" hidden="true">
-              <div class="tooltip total_label" id="lbl_total_pills">Pillenanzahl
-                <span id="tooltiptext_total_pills" class="tooltiptext total_label" alt="Tooltip text to explain that this is the number of pills required to produce the specified dosage.">
-                  Um die Medikament für aller St&auml;lle zum veranreichern, werden folgende Pillenmenge ben&ouml;tigt.
-                </span>
-              </div>
-            </td>
-            <td id="value_pills" hidden="true">
-              <div id="result_pill_count" class="output col-sm-10 total_amt" alt="Total pill count value."></div>
-              <span id="total_pill_unit" class="col-sm-2 total_label" alt="Total pill count unit of measure.">Pille(n)</span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-<div class="container" aria-label="Calculate results button area.">
+              <td id="lbl_pills" hidden="true">
+                <div class="tooltip total_label" id="lbl_total_pills">Pillenanzahl
+                  <span id="tooltiptext_total_pills" class="tooltiptext total_label" alt="Tooltip text to explain that this is the number of pills required to produce the specified dosage.">
+                    Um das Medikament für aller St&auml;lle anzureichern, wird folgende Pillenmenge ben&ouml;tigt.
+                  </span>
+                </div>
+              </td>
+              <td id="value_pills" hidden="true">
+                <div id="result_pill_count" class="output col-sm-10 total_amt" alt="Total pill count value."></div>
+                <span id="total_pill_unit" class="col-sm-2 total_label" alt="Total pill count unit of measure.">Pille(n)</span>
+              </td>
+              <td id="lbl_medication_total" hidden="true">
+                <div class="tooltip total_label" id="lbl_total_medication_total">Gesamtmedikament
+                  <span id="tooltiptext_total_medication" class="tooltiptext total_label" alt="Tooltip text to explain that this is the total amount of medication required to produce the specified dosage.">
+                    Um das Medikament für aller St&auml;lle anzureichern, wird folgende Medikamentenmenge ben&ouml;tigt.
+                  </span>
+                </div>
+              </td>
+              <td id="value_medication_total" hidden="true">
+                <div id="result_medication_amount" class="output col-sm-10 total_amt" alt="Total medication value."></div>
+                <span id="total_medication_unit" class="col-sm-2 total_label" alt="Total medication unit of measure.">ml</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container" aria-label="Calculate results button area.">
   <button type="button" name="btn_calc" class="btn btn_calc tooltip" onclick="calcResults()" aria-label="Button used to calculate everything.">
     <span id="tooltiptext_calculate_results" class="tooltiptext btn_calc_tooltip_text"
     aria-label="Tooltip text to explain that they should click this button to calculate everything."
     alt="Tooltip text to explain that they should click this button to calculate everything.">
     Hier klicken um die Ergebnisse zu berechnen anhand der eingegebenen Werten.
-  </span>
-</button>
+    </span>
+  </button>
 </div>
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
