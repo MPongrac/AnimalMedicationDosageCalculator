@@ -121,9 +121,6 @@ var langKeys = [
   "tooltiptext_total_medication"
  ];
 
-
-// This was used for initial structure testing before adding a file.
-// var langs = '{"en_us": {"title": "Animal Medication Dosage Calculator", "value": "val en", "cheese": "gouda" } , "de_de": { "title": "Tierische Medizin Dosierungsrechner", "value": "val de" }} ';
 var currLangTexts = null;
 var newLangTexts;
 var defaultLangTexts = null;

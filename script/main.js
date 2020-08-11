@@ -12,10 +12,6 @@ var dosage = [0,0,0,0,0,0];
 var mixture = [0,0,0,0,0,0];
 
 var total_num_pills = 0;
-// var processing_pills = false;
-// var processing_fluid = false;
-// var medicine_form_option = "powder";
-// var medicine_form_options = ["powder", "fluid", "pill"];
 
 function calcResults() {
   console.log("#####################");
@@ -105,15 +101,7 @@ function compute_totals() {
   console.log("Test compute_totals val_total_pills/medication amount: " + total_num_pills);
 }
 
-
-// function computeDosageToPillPercentage() {
-//   dosageToPillPercentage = 0;
-//   dosageToPillPercentage = val_amt_med_per_weight / val_amt_med_strength;
-//   console.log("Test computeDosageToPillPercentage: " + dosageToPillPercentage);
-// }
-
 function computeNumberPillsMedicationAmount() {
-  // computeDosageToPillPercentage();
   total_num_pills = 0;
   total_num_pills = val_total_medicine / val_amt_med_strength;
 }

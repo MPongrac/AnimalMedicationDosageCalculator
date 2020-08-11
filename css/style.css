@@ -92,12 +92,6 @@ button.btn_lang:disabled {
   background-image: url("../images/calc.png");
 }
 
-/* input.output {
-  text-align: center;
-  background: blue;
-  color: yellow;
-} */
-
 div.output {
   font-size: 2.0rem;
   font-weight: bold;
