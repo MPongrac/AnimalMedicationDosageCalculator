@@ -19,6 +19,7 @@ var lbl_medication_total = document.getElementById('lbl_medication_total');
 var strength_exist = false;
 var pills_exist = false;
 var fluids_exist = false;
+var btns_med_options_exist = false;
 
 
 function setMedicineFormOptionPowder() {
@@ -108,7 +109,7 @@ function enableAllMedicationOptionButtons() {
   btn_pill.disabled = false;
 }
 function ensureBtnsExist() {
-  if (bts_exist == true) { return; }
+  if (btns_med_options_exist == true) { return; }
   if (btn_powder == null) {
     btn_powder = document.getElementById('btn_powder');
     if (btn_powder == null) {
@@ -127,7 +128,7 @@ function ensureBtnsExist() {
       return;
     }
   }
-  bts_exist = true;
+  btns_med_options_exist = true;
 }
 
 /* All Remaining UI Medication Option Elements */

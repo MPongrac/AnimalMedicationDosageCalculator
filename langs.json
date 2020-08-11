@@ -22,12 +22,28 @@ const langs='{ \
     "tooltiptext_total_medication" : "Sum of all stalls (medication).  This is important if you are ordering it.", \
     "lbl_total_weight" : "Total Weight", \
     "tooltiptext_total_weight" : "Sum of all stalls (per stall: animal count multiplied by average weight entry).", \
-    "tooltiptext_calculate_results" : "Click to calculate all values based upon entered values." \
+    "tooltiptext_calculate_results" : "Click to calculate all values based upon entered values.", \
+    "btn_lbl_powder" : "Powder", \
+    "btn_lbl_fluid" : "Liquid", \
+    "btn_lbl_pill" : "Pill", \
+    "tooltiptext_powder" : "Pure medication in powder form", \
+    "tooltiptext_fluid" : "Medication in fluid form", \
+    "tooltiptext_pill" : "Medication in pill form", \
+    "lbl_strength" : "Strength", \
+    "tooltiptext_strength" : "Locate the medication strength and enter it here.", \
+    "lbl_pill_unit" : "pill", \
+    "lbl_total_medication_dosage" : "Total Dosage", \
+    "tooltiptext_total_medication_dosage" : "Total medication dosage for all stalls", \
+    "lbl_total_pills" : "Total Pills", \
+    "tooltiptext_total_pills" : "This is the total number of pills needed to treat all animals in all stalls.", \
+    "total_pill_unit" : "pill(s)", \
+    "lbl_total_medication_total" : "Total Medication", \
+    "tooltiptext_total_medication" : "This is the total amount of medication needed to treat all animals in all stalls." \
   } , \
   "de_de" : { \
     "title" : "Tierische Medizin Dosierungsrechner", \
     "lbl_dosage" : "Dosierung", \
-    "tooltiptext_dosage" : "Trage den Beipackzettel beschriebene Dosis ein.", \
+    "tooltiptext_dosage" : "Trage die im Beipackzettel beschriebene Dosis ein.", \
     "lbl_amt_water" : "Wassermischung", \
     "tooltiptext_amt_water_mixture" : "Wassermenge, falls das Medikament vorher aufgel&ouml;st, bzw mit Wasser verd&uuml;nnt werden soll.", \
     "heading_animal_details" : "Tiere Details", \
@@ -47,6 +63,22 @@ const langs='{ \
     "tooltiptext_total_medication" : "Ben&ouml;tigte Medikamentgesamtmenge.", \
     "lbl_total_weight" : "Gesamtgewicht", \
     "tooltiptext_total_weight" : "Summe Gewicht aller St&auml;lle (Pro Stall: Anzahl Tiere mal Gewichtsdurchschnitt).", \
-    "tooltiptext_calculate_results" : "Hier klicken um die Ergebnisse zu berechnen anhand der eingegebenen Werten." \
+    "tooltiptext_calculate_results" : "Hier klicken um die Ergebnisse zu berechnen anhand der eingegebenen Werten.", \
+    "btn_lbl_powder" : "Pulver", \
+    "btn_lbl_fluid" : "Flüssig", \
+    "btn_lbl_pill" : "Pille", \
+    "tooltiptext_powder" : "Pures Medikament in Pulverform", \
+    "tooltiptext_fluid" : "Medikament in fl&uuml;ssiger Form", \
+    "tooltiptext_pill" : "Medikament in Pillenform", \
+    "lbl_strength" : "Medikamentenst&auml;rke", \
+    "tooltiptext_strength" : "Trage die im Beipackzettel beschriebene St&auml;rke ein.", \
+    "lbl_pill_unit" : "Pille", \
+    "lbl_total_medication_dosage" : "Gesamtdosis", \
+    "tooltiptext_total_medication_dosage" : "Gesamtmenge der ben&ouml;tigten Medikamentendosis.", \
+    "lbl_total_pills" : "Pillenanzahl", \
+    "tooltiptext_total_pills" : "Um das Medikament für aller St&auml;lle anzureichern, wird folgende Pillenmenge ben&ouml;tigt.", \
+    "total_pill_unit" : "Pille(n)", \
+    "lbl_total_medication_total" : "Gesamtmedikament", \
+    "tooltiptext_total_medication" : "Um das Medikament für aller St&auml;lle anzureichern, wird folgende Medikamentenmenge ben&ouml;tigt." \
   } \
 }';

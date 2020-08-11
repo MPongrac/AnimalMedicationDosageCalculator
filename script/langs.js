@@ -1,6 +1,18 @@
 const DE_DE = "de_de";
 const EN_US = "en_us";
 
+var btn_powder = document.getElementById('btn_powder');
+var btn_fluid = document.getElementById('btn_fluid');
+var btn_pill = document.getElementById('btn_pill');
+
+var btn_lbl_powder = document.getElementById('btn_lbl_powder');
+var btn_lbl_fluid = document.getElementById('btn_lbl_fluid');
+var btn_lbl_pill = document.getElementById('btn_lbl_pill');
+
+var tooltiptext_powder = document.getElementById('tooltiptext_powder');
+var tooltiptext_fluid = document.getElementById('tooltiptext_fluid');
+var tooltiptext_pill = document.getElementById('tooltiptext_pill');
+
 var btn_en_us = document.getElementById('btn_en_us');
 var btn_de_de = document.getElementById('btn_de_de');
 
@@ -9,6 +21,10 @@ var tooltiptext_de_de = document.getElementById('tooltiptext_de_de');
 
 var heading_title_tab = document.getElementById('heading_title_tab');
 var heading_title_page = document.getElementById('heading_title_page');
+
+var lbl_strength = document.getElementById('lbl_strength');
+var tooltiptext_strength = document.getElementById('lbl_strength');
+var lbl_pill_unit = document.getElementById('lbl_pill_unit');
 
 var lbl_dosage = document.getElementById('lbl_dosage');
 var lbl_amt_water = document.getElementById('lbl_amt_water');
@@ -36,8 +52,17 @@ var tooltiptext_total_animal_count = document.getElementById('tooltiptext_total_
 var lbl_total_medication = document.getElementById('lbl_total_medication');
 var tooltiptext_total_medication = document.getElementById('tooltiptext_total_medication');
 
+var lbl_total_medication_dosage = document.getElementById('lbl_total_medication_dosage');
+
 var lbl_total_weight = document.getElementById('lbl_total_weight');
 var tooltiptext_total_weight = document.getElementById('tooltiptext_total_weight');
+
+var lbl_total_pills = document.getElementById('lbl_total_pills');
+var total_pill_unit = document.getElementById('total_pill_unit');
+var tooltiptext_total_pills = document.getElementById('tooltiptext_total_weight');
+
+var lbl_total_medication_total = document.getElementById('lbl_total_medication_total');
+var tooltiptext_total_medication = document.getElementById('tooltiptext_total_weight');
 
 var tooltiptext_calculate_results = document.getElementById('tooltiptext_calculate_results');
 
@@ -45,7 +70,8 @@ var default_lang = EN_US;
 var lang = DE_DE;
 var tab_title = "";
 
-var bts_exist = false;
+var btns_lang_exist = false;
+var btns_opts_exist = false;
 var lbls_exist = false;
 var tooltiptexts_exist = false;
 var headings_exist = false;
@@ -76,8 +102,26 @@ var langKeys = [
   "tooltiptext_total_medication",
   "lbl_total_weight",
   "tooltiptext_total_weight",
-  "tooltiptext_calculate_results"
+  "tooltiptext_calculate_results",
+  "btn_lbl_powder",
+  "btn_lbl_fluid",
+  "btn_lbl_pill",
+  "tooltiptext_powder",
+  "tooltiptext_fluid",
+  "tooltiptext_pill",
+  "lbl_strength",
+  "tooltiptext_strength",
+  "lbl_pill_unit",
+  "lbl_total_medication_dosage",
+  "tooltiptext_total_medication_dosage",
+  "lbl_total_pills",
+  "tooltiptext_total_pills",
+  "total_pill_unit",
+  "lbl_total_medication_total",
+  "tooltiptext_total_medication"
  ];
+
+
 // This was used for initial structure testing before adding a file.
 // var langs = '{"en_us": {"title": "Animal Medication Dosage Calculator", "value": "val en", "cheese": "gouda" } , "de_de": { "title": "Tierische Medizin Dosierungsrechner", "value": "val de" }} ';
 var currLangTexts = null;
@@ -105,6 +149,7 @@ function setLang(newLang) {
   default:
     btn_en_us.disabled = true;
   }
+  enableAllMedicineFormOptionButtons();
   setNewLang(newLang);
   console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 }
@@ -114,6 +159,7 @@ function setControlTexts() {
   ensureLangElementsExist();
 
   setTitle();
+  setMedicineFormOptionLabelAndTooltips();
   setInputLabelsAndTooltips();
   setFunctionalDescriptionWithHeading();
   setColumnHeadingLabelsAndTooltips();
@@ -121,16 +167,7 @@ function setControlTexts() {
   setComputeButtonTooltip();
 }
 function setTitle() {
-  // if (heading_title_tab != null) {
-  //   console.log("setting tab title: " + currLangTexts["title"] );
-  //   heading_title_tab.value = currLangTexts["title"];
-  // }
-  // if (heading_title_page != null) {
-  //   console.log("setting page title: " + currLangTexts["title"] );
-  //   heading_title_page.value = currLangTexts["title"];
-  // }
   document.title = currLangTexts["title"];
-  // $("#title").text(currLangTexts["title"]);
   $("#heading_title_page").text(currLangTexts["title"]);
 }
 
@@ -139,10 +176,26 @@ function generateLblToolTipText(lbl_name, tooltiptext_name) {
     currLangTexts[tooltiptext_name] +
   '</span>');
 }
+function generateLblBottomToolTipText(lbl_name, tooltiptext_name) {
+  $(("#" + lbl_name)).html(currLangTexts[lbl_name] + '<span id="' + tooltiptext_name + '" class="tooltiptext_bottom">' +
+    currLangTexts[tooltiptext_name] +
+  '</span>');
+}
 
+function setMedicineFormOptionLabelAndTooltips() {
+  $("#btn_lbl_powder").text(currLangTexts["btn_lbl_powder"]);
+  $("#tooltiptext_powder").text(currLangTexts["tooltiptext_powder"]);
+  $("#btn_lbl_fluid").text(currLangTexts["btn_lbl_fluid"]);
+  $("#tooltiptext_fluid").text(currLangTexts["tooltiptext_fluid"]);
+  $("#btn_lbl_pill").text(currLangTexts["btn_lbl_pill"]);
+  $("#tooltiptext_pill").text(currLangTexts["tooltiptext_pill"]);
+}
 function setInputLabelsAndTooltips() {
-  generateLblToolTipText("lbl_dosage", "tooltiptext_dosage");
-  generateLblToolTipText("lbl_amt_water", "tooltiptext_amt_water_mixture");
+  generateLblBottomToolTipText("lbl_strength", "tooltiptext_strength");
+  generateLblBottomToolTipText("lbl_dosage", "tooltiptext_dosage");
+  generateLblBottomToolTipText("lbl_amt_water", "tooltiptext_amt_water_mixture");
+
+  $("#lbl_pill_unit").text(currLangTexts["lbl_pill_unit"]);
 }
 function setFunctionalDescriptionWithHeading() {
   $("#heading_animal_details").html(currLangTexts["heading_animal_details"]);
@@ -158,7 +211,12 @@ function setColumnHeadingLabelsAndTooltips() {
 function setColumnTotalLabelsAndTooltips() {
   generateLblToolTipText("lbl_total_animal_count", "tooltiptext_total_animal_count");
   generateLblToolTipText("lbl_total_medication", "tooltiptext_total_medication");
+  generateLblToolTipText("lbl_total_medication_dosage", "tooltiptext_total_medication_dosage");
   generateLblToolTipText("lbl_total_weight", "tooltiptext_total_weight");
+  generateLblToolTipText("lbl_total_pills", "tooltiptext_total_pills");
+  generateLblToolTipText("lbl_total_medication_total", "tooltiptext_total_medication");
+
+  $("#total_pill_unit").text(currLangTexts["total_pill_unit"]);
 }
 function setComputeButtonTooltip() {
   $("#tooltiptext_calculate_results").text(currLangTexts["tooltiptext_calculate_results"]);
@@ -247,12 +305,14 @@ function loadLanguages() {
 
 /* Language Buttons */
 function enableAllLangButtons() {
-  ensureBtnsExist();
-  btn_en_us.disabled = false;
-  btn_de_de.disabled = false;
+  ensureBtnsLangExist();
+  if (btns_lang_exist === true) {
+    btn_en_us.disabled = false;
+    btn_de_de.disabled = false;
+  }
 }
-function ensureBtnsExist() {
-  if (bts_exist == true) { return; }
+function ensureBtnsLangExist() {
+  if (btns_lang_exist === true) { return; }
   if (btn_en_us == null) {
     btn_en_us = document.getElementById('btn_en_us');
     if (btn_en_us == null) {
@@ -265,7 +325,39 @@ function ensureBtnsExist() {
       return;
     }
   }
-  bts_exist = true;
+
+  btns_lang_exist = true;
+}
+function enableAllMedicineFormOptionButtons() {
+  ensureBtnsOptsExist();
+  if (btns_opts_exist === true) {
+    btn_powder.disabled = true;
+    btn_fluid.disabled = false;
+    btn_pill.disabled = false;
+  }
+}
+function ensureBtnsOptsExist() {
+  if (btns_opts_exist === true) { return; }
+  if (btn_powder == null) {
+    btn_powder = document.getElementById('btn_powder');
+    if (btn_powder == null) {
+      return;
+    }
+  }
+  if (btn_fluid == null) {
+    btn_fluid = document.getElementById('btn_fluid');
+    if (btn_fluid == null) {
+      return;
+    }
+  }
+  if (btn_pill == null) {
+    btn_pill = document.getElementById('btn_pill');
+    if (btn_pill == null) {
+      return;
+    }
+  }
+
+  btns_opts_exist = true;
 }
 
 /* All Remaining UI Language Elements */
@@ -278,7 +370,39 @@ function ensureLangElementsExist() {
 function ensureLblsExist() {
   if (lbls_exist == true) { return; }
 
+  // Button Labels
+  if (btn_lbl_powder == null) {
+    btn_lbl_powder = document.getElementById('btn_lbl_powder');
+    if (btn_lbl_powder == null) {
+      return;
+    }
+  }
+  if (btn_lbl_fluid == null) {
+    btn_lbl_fluid = document.getElementById('btn_lbl_fluid');
+    if (btn_lbl_fluid == null) {
+      return;
+    }
+  }
+  if (btn_lbl_pill == null) {
+    btn_lbl_pill = document.getElementById('btn_lbl_pill');
+    if (btn_lbl_pill == null) {
+      return;
+    }
+  }
+
   // Selections
+  if (lbl_pill_unit == null) {
+    lbl_pill_unit = document.getElementById('lbl_pill_unit');
+    if (lbl_pill_unit == null) {
+      return;
+    }
+  }
+  if (lbl_strength == null) {
+    lbl_strength = document.getElementById('lbl_strength');
+    if (lbl_strength == null) {
+      return;
+    }
+  }
   if (lbl_dosage == null) {
     lbl_dosage = document.getElementById('lbl_dosage');
     if (lbl_dosage == null) {
@@ -337,9 +461,33 @@ function ensureLblsExist() {
       return;
     }
   }
+  if (lbl_total_medication_dosage == null) {
+    lbl_total_medication_dosage = document.getElementById('lbl_total_medication_dosage');
+    if (lbl_total_medication_dosage == null) {
+      return;
+    }
+  }
+  if (lbl_total_medication_total == null) {
+    lbl_total_medication_total = document.getElementById('lbl_total_medication_total');
+    if (lbl_total_medication_total == null) {
+      return;
+    }
+  }
   if (lbl_total_weight == null) {
     lbl_total_weight = document.getElementById('lbl_total_weight');
     if (lbl_total_weight == null) {
+      return;
+    }
+  }
+  if (lbl_total_pills == null) {
+    lbl_total_pills = document.getElementById('lbl_total_pills');
+    if (lbl_total_pills == null) {
+      return;
+    }
+  }
+  if (total_pill_unit == null) {
+    total_pill_unit = document.getElementById('total_pill_unit');
+    if (total_pill_unit == null) {
       return;
     }
   }
@@ -350,6 +498,24 @@ function ensureToolTipTextsExist() {
   if (tooltiptexts_exist == true) { return; }
 
   // Buttons
+  if (tooltiptext_powder == null) {
+    tooltiptext_powder = document.getElementById('tooltiptext_powder');
+    if (tooltiptext_powder == null) {
+      return;
+    }
+  }
+  if (tooltiptext_fluid == null) {
+    tooltiptext_fluid = document.getElementById('tooltiptext_fluid');
+    if (tooltiptext_fluid == null) {
+      return;
+    }
+  }
+  if (tooltiptext_pill == null) {
+    tooltiptext_pill = document.getElementById('tooltiptext_pill');
+    if (tooltiptext_pill == null) {
+      return;
+    }
+  }
   if (tooltiptext_en_us == null) {
     tooltiptext_en_us = document.getElementById('tooltiptext_en_us');
     if (tooltiptext_en_us == null) {
@@ -359,6 +525,14 @@ function ensureToolTipTextsExist() {
   if (tooltiptext_de_de == null) {
     tooltiptext_de_de = document.getElementById('tooltiptext_de_de');
     if (tooltiptext_de_de == null) {
+      return;
+    }
+  }
+
+
+  if (tooltiptext_strength == null) {
+    tooltiptext_strength = document.getElementById('tooltiptext_strength');
+    if (tooltiptext_strength == null) {
       return;
     }
   }
@@ -404,6 +578,7 @@ function ensureToolTipTextsExist() {
     }
   }
 
+
   // Totals
   if (tooltiptext_total_animal_count == null) {
     tooltiptext_total_animal_count = document.getElementById('tooltiptext_total_animal_count');
@@ -417,12 +592,33 @@ function ensureToolTipTextsExist() {
       return;
     }
   }
+  if (tooltiptext_total_medication_dosage == null) {
+    tooltiptext_total_medication_dosage = document.getElementById('tooltiptext_total_medication_dosage');
+    if (tooltiptext_total_medication_dosage == null) {
+      return;
+    }
+  }
   if (tooltiptext_total_weight == null) {
     tooltiptext_total_weight = document.getElementById('tooltiptext_total_weight');
     if (tooltiptext_total_weight == null) {
       return;
     }
   }
+  if (tooltiptext_total_pills == null) {
+    tooltiptext_total_pills = document.getElementById('tooltiptext_total_pills');
+    if (tooltiptext_total_pills == null) {
+      return;
+    }
+  }
+  if (tooltiptext_total_medication == null) {
+    tooltiptext_total_medication = document.getElementById('tooltiptext_total_medication');
+    if (tooltiptext_total_medication == null) {
+      return;
+    }
+  }
+
+
+
 
   tooltiptexts_exist = true;
 }
