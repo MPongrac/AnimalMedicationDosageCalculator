@@ -10,3 +10,21 @@ It was designed to be generic so that more people could use it.  There are no re
 Please enjoy the calculator and tell your friends about it if you find it useful.
 
 If anyone wishes to add other languages, feel free to contact me via github.
+
+
+# Future Plans
+
+* Improve the mobile user experience.
+* Add a medication identifier, so the user doesn't forget which one they are currently computing.
+* Add a way to store medication calculations.
+* Add more languages.
+* Add other medication forms. (Done.)
+* Open for further suggestions.
+
+# Change Log
+
+* 2020-08-11
+New features added:    Pill and fluid forms of medication can now be calculated.
+
+* 2020-08-06
+New features added:    Made styling changes so that totals were easier to identify.
