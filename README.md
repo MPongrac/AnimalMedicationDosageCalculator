@@ -23,6 +23,9 @@ If anyone wishes to add other languages, feel free to contact me via github.
 
 # Change Log
 
+* 2021-05-22
+New features added:    Increased the number of stalls to 10.
+
 * 2020-08-11
 New features added:    Pill and fluid forms of medication can now be calculated.
 
