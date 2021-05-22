@@ -7,9 +7,9 @@ var val_total_medicine = 0;
 var dosageToPillPercentage = 0;
 
 var animal_count = [];
-var animal_avg_weight = [0,0,0,0,0,0];
-var dosage = [0,0,0,0,0,0];
-var mixture = [0,0,0,0,0,0];
+var animal_avg_weight = [0,0,0,0,0,0,0,0,0,0];
+var dosage = [0,0,0,0,0,0,0,0,0,0];
+var mixture = [0,0,0,0,0,0,0,0,0,0];
 
 var total_num_pills = 0;
 
@@ -49,6 +49,10 @@ function get_entered_detail_amounts() {
   get_row_4_details();
   get_row_5_details();
   get_row_6_details();
+  get_row_7_details();
+  get_row_8_details();
+  get_row_9_details();
+  get_row_10_details();
 }
 function get_row_1_details() {
   animal_count[0] = document.getElementById('row_1_animal_count').value;
@@ -75,6 +79,22 @@ function get_row_5_details() {
 function get_row_6_details() {
   animal_count[5] = document.getElementById('row_6_animal_count').value;
   animal_avg_weight[5] = document.getElementById('row_6_animal_avg_weight').value;
+}
+function get_row_7_details() {
+  animal_count[6] = document.getElementById('row_7_animal_count').value;
+  animal_avg_weight[6] = document.getElementById('row_7_animal_avg_weight').value;
+}
+function get_row_8_details() {
+  animal_count[7] = document.getElementById('row_8_animal_count').value;
+  animal_avg_weight[7] = document.getElementById('row_8_animal_avg_weight').value;
+}
+function get_row_9_details() {
+  animal_count[8] = document.getElementById('row_9_animal_count').value;
+  animal_avg_weight[8] = document.getElementById('row_9_animal_avg_weight').value;
+}
+function get_row_10_details() {
+  animal_count[9] = document.getElementById('row_10_animal_count').value;
+  animal_avg_weight[9] = document.getElementById('row_10_animal_avg_weight').value;
 }
 
 function compute_totals() {
@@ -133,6 +153,10 @@ function show_row_details() {
   show_row_4_details();
   show_row_5_details();
   show_row_6_details();
+  show_row_7_details();
+  show_row_8_details();
+  show_row_9_details();
+  show_row_10_details();
 }
 function show_row_1_details() {
   $("#row_1_ml_medicine").html(dosage[0].toFixed(2));
@@ -157,4 +181,20 @@ function show_row_5_details() {
 function show_row_6_details() {
   $('#row_6_ml_medicine').html(dosage[5].toFixed(2));
   $('#row_6_ml_water_mixture').html(mixture[5].toFixed(2));
+}
+function show_row_7_details() {
+  $('#row_7_ml_medicine').html(dosage[6].toFixed(2));
+  $('#row_7_ml_water_mixture').html(mixture[6].toFixed(2));
+}
+function show_row_8_details() {
+  $('#row_8_ml_medicine').html(dosage[7].toFixed(2));
+  $('#row_8_ml_water_mixture').html(mixture[7].toFixed(2));
+}
+function show_row_9_details() {
+  $('#row_9_ml_medicine').html(dosage[8].toFixed(2));
+  $('#row_9_ml_water_mixture').html(mixture[8].toFixed(2));
+}
+function show_row_10_details() {
+  $('#row_10_ml_medicine').html(dosage[9].toFixed(2));
+  $('#row_10_ml_water_mixture').html(mixture[9].toFixed(2));
 }
