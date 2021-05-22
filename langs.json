@@ -34,7 +34,7 @@ const langs='{ \
     "lbl_pill_unit" : "pill", \
     "lbl_total_medication_dosage" : "Total Dosage", \
     "tooltiptext_total_medication_dosage" : "Total medication dosage for all stalls", \
-    "lbl_total_pills" : "Total Pills", \
+    "lbl_total_pills" : "Total Medication", \
     "tooltiptext_total_pills" : "This is the total number of pills needed to treat all animals in all stalls.", \
     "total_pill_unit" : "pill(s)", \
     "lbl_total_medication_total" : "Total Medication", \
@@ -75,7 +75,7 @@ const langs='{ \
     "lbl_pill_unit" : "Pille", \
     "lbl_total_medication_dosage" : "Gesamtdosis", \
     "tooltiptext_total_medication_dosage" : "Gesamtmenge der ben&ouml;tigten Medikamentendosis.", \
-    "lbl_total_pills" : "Pillenanzahl", \
+    "lbl_total_pills" : "Gesamtmedikament", \
     "tooltiptext_total_pills" : "Um das Medikament für aller St&auml;lle anzureichern, wird folgende Pillenmenge ben&ouml;tigt.", \
     "total_pill_unit" : "Pille(n)", \
     "lbl_total_medication_total" : "Gesamtmedikament", \
