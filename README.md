@@ -19,6 +19,7 @@ If anyone wishes to add other languages, feel free to contact me via github.
 * Add a way to store medication calculations.
 * Add more languages.
 * Add other medication forms. (Done.)
+* Add other dosage options. (i.e. total amount x provided for all animals y times daily for the next z weeks, total amount x provided for all animals every y days for the next z weeks)
 * Open for further suggestions.
 
 # Change Log
