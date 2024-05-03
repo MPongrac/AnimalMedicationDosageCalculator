@@ -3,9 +3,31 @@ body {
   color: brown;
 }
 
-nav.navbar, .container-fluid, .navbar-header, .navbar-nav {
-  background-color: brown
+nav {
+  background-color: brown;
   color: #f0cca1;
+  display: flex;
+  flex-flow: row;
+}
+
+nav .container {
+  @media screen and (min-width: 768px) {
+    display: flex;
+
+    .navbar-med-forms {
+      flex-grow: 1;
+      ul {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .navbar-languages {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+  }
 }
 
 .row {
@@ -13,25 +35,43 @@ nav.navbar, .container-fluid, .navbar-header, .navbar-nav {
   margin-right: 0;
 }
 
-.navbar {
-  margin-bottom: 0;
+.navbar-med-forms > ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 8px
+  }
 }
 
-.navbar-med-forms {
-  content: center;
+
+.tooltiptext, .tooltiptext_bottom {
+  background-color: rgba(255,255,255,.9)!important;
+  color: black!important;
 }
 
-.navbar-language-options {
-  position: fixed;
-  margin-right: 40px;
+.tooltiptext_bottom {
+  margin-top: 5px!important;
 }
 
-.navbar-right {
-  margin-right: 50px;
+button span.tooltiptext_bottom::after {
+  border-color: transparent transparent rgba(255,255,255,.9) transparent!important;
+}
+
+.tooltiptext::after {
+  border-color: rgba(255,255,255,.9) transparent transparent transparent!important;
+
+}
+
+.navbar-languages {
+  margin-bottom: 20px;
 }
 
 .container {
-  width: 90%;
+  max-width: 1200px;
 }
 
 section.entry_area {
@@ -40,19 +80,21 @@ section.entry_area {
 }
 
 button.btn_medicine_option {
-  margin-left: 15px;
-  margin-right: 15px;
+  padding: 0 10px;
+  border: 0;
   color: black;
   border-radius: 30px;
+  font-size: 18px;
 }
 
 button.btn_medicine_option:disabled {
   background-color: green;
+  color: white;
 }
 
 .btn_lang {
-  width: 60px;
-  height: 40px;
+  width: 40px;
+  height: 30px;
   border: 0;
   text-align: center;
   align-content: center;
@@ -66,7 +108,7 @@ button.btn_medicine_option:disabled {
 }
 
 button.btn_lang:disabled {
-  background-color: red;
+  /*background-color: red;*/
 }
 
 .btn_en_us {
@@ -78,7 +120,7 @@ button.btn_lang:disabled {
 }
 
 .top-inputs {
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .btn_calc {
@@ -90,6 +132,7 @@ button.btn_lang:disabled {
   align-content: center;
   vertical-align: middle;
   background-image: url("../images/calc.png");
+  margin-bottom: 20px;
 }
 
 div.output {
@@ -102,6 +145,15 @@ div.output {
   text-align: center;
   background-color: brown;
   color: #fdcca1;
+}
+
+.total {
+  margin: 20px 0;
+  display: flex;
+
+  .output {
+    margin: 0 10px;
+  }
 }
 
 div.total_amt, span.tooltiptext .total_label {
@@ -262,4 +314,56 @@ select.entry {
 .table > thead > tr > th {
   font-size: 2.0rem;
   border-bottom-color: inherit;
+}
+
+
+.med_entry_rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.med_entry_rows > div {
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+  @media screen and (min-width: 768px) {
+    flex-flow: row;
+    padding: 0;
+  }
+}
+.med_entry_rows > div:nth-child(even) {
+  background-color: rgba(255,255,255,0.4);
+}
+
+.med_entry_rows > div > div {
+  flex-grow: 1;
+  @media screen and (max-width: 767px) {
+    display: flex;
+  }
+}
+.med_entry_rows > div > div:nth-child(1) {
+  margin: 0 3px;
+  font-weight: bold;
+  @media screen and (max-width: 767px) {
+    border-bottom: 1px solid #888;
+    margin-bottom: 5px;
+  }
+}
+
+.med_entry_rows__descr {
+  flex-grow: 1;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.med_entry_rows__help {
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.med_entry_rows__help ul {
+  padding-left: 20px;
 }
