@@ -49,7 +49,7 @@ nav .container {
 
 
 .tooltiptext, .tooltiptext_bottom {
-  background-color: rgba(255,255,255,.9)!important;
+  background-color: rgba(255,255,255,1)!important;
   color: black!important;
 }
 
@@ -63,7 +63,11 @@ button span.tooltiptext_bottom::after {
 
 .tooltiptext::after {
   border-color: rgba(255,255,255,.9) transparent transparent transparent!important;
+}
 
+.navbar-brand {
+  height: unset;
+  min-height: 50px;
 }
 
 .navbar-languages {
@@ -124,15 +128,20 @@ button.btn_lang:disabled {
 }
 
 .btn_calc {
-  background: yellow;
   width: 80px;
   height: 80px;
-  border-radius: 16px;
+  border-radius: 8px;
   text-align: center;
   align-content: center;
   vertical-align: middle;
-  background-image: url("../images/calc.png");
+  background: url("../images/calc.png") no-repeat 50% 50% green;
   margin-bottom: 20px;
+  background-size: 60px;
+}
+
+.btn_calc .btn_calc_tooltip_text {
+  margin-left: -50px!important;
+  bottom: 110%!important;
 }
 
 div.output {
@@ -150,9 +159,14 @@ div.output {
 .total {
   margin: 20px 0;
   display: flex;
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+  }
 
   .output {
     margin: 0 10px;
+    padding: 5px;
+    line-height: 1;
   }
 }
 
@@ -168,22 +182,22 @@ div.total_label, span.total_label {
 input.entry {
   font-size: 2.0rem;
   font-weight: bold;
-  border: black 2px;
+  border: 0;
   width: 120px;
   height: auto;
   text-align: center;
   color: black;
   background: white;
-  margin: 2px;
+  margin-bottom: 3px;
 }
 
 select.entry {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
+  border: 0;
   margin: 0;
   width: 70px;
   height: 30.5667px;
-  border: black 2px;
   text-align: start;
   color: black;
   background: white;
@@ -224,21 +238,22 @@ select.entry {
   font-size: 2.0rem;
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  border: none;
   align-content: center;
   text-align: center;
   opacity: 1;
+  z-index: unset;
 }
 
 /* Tooltip text */
 .tooltip .tooltiptext {
   font-size: 1.7rem;
   visibility: hidden;
-  width: 200px;
+  /*width: 200px;*/
   background-color: brown;
   color: #fdcca1;
   text-align: center;
-  padding: 5px 0;
+  padding: 5px 10px;
   border-radius: 6px;
 
   /* Position the tooltip text */
@@ -326,6 +341,7 @@ select.entry {
   display: flex;
   flex-flow: column;
   padding: 10px;
+  margin: 3px 0;
   @media screen and (min-width: 768px) {
     flex-flow: row;
     padding: 0;
@@ -362,8 +378,27 @@ select.entry {
   background-color: white;
   border-radius: 5px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .med_entry_rows__help ul {
   padding-left: 20px;
+}
+
+.med_entry_rows__help input {
+  display: none;
+}
+
+.med_entry_rows__help label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.med_entry_rows__help :not(input:checked) + ul {
+  height: 0;
+  overflow: hidden;
 }
