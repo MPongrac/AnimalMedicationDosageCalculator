@@ -297,6 +297,7 @@ select.entry {
   top: 100%;
   left: 50%;
   margin-left: -100px;
+  padding: 5px;
 
   /* Fade in tooltip */
   opacity: 0;
@@ -312,7 +313,7 @@ select.entry {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent #555 transparent;
+  border-color: transparent transparent #fff transparent;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
