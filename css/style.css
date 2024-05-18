@@ -3,9 +3,31 @@ body {
   color: brown;
 }
 
-nav.navbar, .container-fluid, .navbar-header, .navbar-nav {
-  background-color: brown
+nav {
+  background-color: brown;
   color: #f0cca1;
+  display: flex;
+  flex-flow: row;
+}
+
+nav .container {
+  @media screen and (min-width: 768px) {
+    display: flex;
+
+    .navbar-med-forms {
+      flex-grow: 1;
+      ul {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .navbar-languages {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+  }
 }
 
 .row {
@@ -13,25 +35,47 @@ nav.navbar, .container-fluid, .navbar-header, .navbar-nav {
   margin-right: 0;
 }
 
-.navbar {
-  margin-bottom: 0;
+.navbar-med-forms > ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 8px
+  }
 }
 
-.navbar-med-forms {
-  content: center;
+
+.tooltiptext, .tooltiptext_bottom {
+  background-color: rgba(255,255,255,1)!important;
+  color: black!important;
 }
 
-.navbar-language-options {
-  position: fixed;
-  margin-right: 40px;
+.tooltiptext_bottom {
+  margin-top: 5px!important;
 }
 
-.navbar-right {
-  margin-right: 50px;
+button span.tooltiptext_bottom::after {
+  border-color: transparent transparent rgba(255,255,255,.9) transparent!important;
+}
+
+.tooltiptext::after {
+  border-color: rgba(255,255,255,.9) transparent transparent transparent!important;
+}
+
+.navbar-brand {
+  height: unset;
+  min-height: 50px;
+}
+
+.navbar-languages {
+  margin-bottom: 20px;
 }
 
 .container {
-  width: 90%;
+  max-width: 1200px;
 }
 
 section.entry_area {
@@ -40,19 +84,21 @@ section.entry_area {
 }
 
 button.btn_medicine_option {
-  margin-left: 15px;
-  margin-right: 15px;
+  padding: 0 10px;
+  border: 0;
   color: black;
   border-radius: 30px;
+  font-size: 18px;
 }
 
 button.btn_medicine_option:disabled {
   background-color: green;
+  color: white;
 }
 
 .btn_lang {
-  width: 60px;
-  height: 40px;
+  width: 40px;
+  height: 30px;
   border: 0;
   text-align: center;
   align-content: center;
@@ -66,7 +112,7 @@ button.btn_medicine_option:disabled {
 }
 
 button.btn_lang:disabled {
-  background-color: red;
+  /*background-color: red;*/
 }
 
 .btn_en_us {
@@ -78,18 +124,24 @@ button.btn_lang:disabled {
 }
 
 .top-inputs {
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .btn_calc {
-  background: yellow;
   width: 80px;
   height: 80px;
-  border-radius: 16px;
+  border-radius: 8px;
   text-align: center;
   align-content: center;
   vertical-align: middle;
-  background-image: url("../images/calc.png");
+  background: url("../images/calc.png") no-repeat 50% 50% green;
+  margin-bottom: 20px;
+  background-size: 60px;
+}
+
+.btn_calc .btn_calc_tooltip_text {
+  margin-left: -50px!important;
+  bottom: 110%!important;
 }
 
 div.output {
@@ -104,6 +156,20 @@ div.output {
   color: #fdcca1;
 }
 
+.total {
+  margin: 20px 0;
+  display: flex;
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+  }
+
+  .output {
+    margin: 0 10px;
+    padding: 5px;
+    line-height: 1;
+  }
+}
+
 div.total_amt, span.tooltiptext .total_label {
   background: black;
   color: white;
@@ -116,22 +182,22 @@ div.total_label, span.total_label {
 input.entry {
   font-size: 2.0rem;
   font-weight: bold;
-  border: black 2px;
+  border: 0;
   width: 120px;
   height: auto;
   text-align: center;
   color: black;
   background: white;
-  margin: 2px;
+  margin-bottom: 3px;
 }
 
 select.entry {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
+  border: 0;
   margin: 0;
   width: 70px;
   height: 30.5667px;
-  border: black 2px;
   text-align: start;
   color: black;
   background: white;
@@ -172,21 +238,22 @@ select.entry {
   font-size: 2.0rem;
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  border: none;
   align-content: center;
   text-align: center;
   opacity: 1;
+  z-index: unset;
 }
 
 /* Tooltip text */
 .tooltip .tooltiptext {
   font-size: 1.7rem;
   visibility: hidden;
-  width: 200px;
+  /*width: 200px;*/
   background-color: brown;
   color: #fdcca1;
   text-align: center;
-  padding: 5px 0;
+  padding: 5px 10px;
   border-radius: 6px;
 
   /* Position the tooltip text */
@@ -230,6 +297,7 @@ select.entry {
   top: 100%;
   left: 50%;
   margin-left: -100px;
+  padding: 5px;
 
   /* Fade in tooltip */
   opacity: 0;
@@ -245,7 +313,7 @@ select.entry {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent #555 transparent;
+  border-color: transparent transparent #fff transparent;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -262,4 +330,76 @@ select.entry {
 .table > thead > tr > th {
   font-size: 2.0rem;
   border-bottom-color: inherit;
+}
+
+
+.med_entry_rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.med_entry_rows > div {
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+  margin: 3px 0;
+  @media screen and (min-width: 768px) {
+    flex-flow: row;
+    padding: 0;
+  }
+}
+.med_entry_rows > div:nth-child(even) {
+  background-color: rgba(255,255,255,0.4);
+}
+
+.med_entry_rows > div > div {
+  flex-grow: 1;
+  @media screen and (max-width: 767px) {
+    display: flex;
+  }
+}
+.med_entry_rows > div > div:nth-child(1) {
+  margin: 0 3px;
+  font-weight: bold;
+  @media screen and (max-width: 767px) {
+    border-bottom: 1px solid #888;
+    margin-bottom: 5px;
+  }
+}
+
+.med_entry_rows__descr {
+  flex-grow: 1;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.med_entry_rows__help {
+  padding: 5px 20px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.med_entry_rows__help ul {
+  padding-left: 20px;
+}
+
+.med_entry_rows__help input {
+  display: none;
+}
+
+.med_entry_rows__help label {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.med_entry_rows__help :not(input:checked) + ul {
+  height: 0;
+  overflow: hidden;
 }
